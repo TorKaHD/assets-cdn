@@ -6,7 +6,7 @@
 // ========================================
 
 // Importar la biblioteca Three.js desde CDN
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.min.js';
 
 // ========================================
 // INICIALIZACIÓN
@@ -600,3 +600,4 @@ function initLogo() {
  *    - Velocidad de rotación: Cambiar el valor 0.0018 en la animación
  *    - Suavidad: Modificar el factor 0.075 en la interpolación
  */
+
