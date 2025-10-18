@@ -6,7 +6,7 @@
 // ========================================
 
 // Importar la biblioteca Three.js desde CDN
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.min.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
 
 // ========================================
 // INICIALIZACIÓN
@@ -41,6 +41,19 @@ function initLogo() {
     if (!container || !canvas) {
         console.error('Contenedor o canvas no encontrado');
         return;
+    }
+
+    // ========================================
+    // OCULTAR EL HINT DE INSTRUCCIONES
+    // ========================================
+    
+    /**
+     * Buscar y ocultar el elemento logo-hint si existe
+     * Esto elimina el texto de "Arrastra para rotar • Scroll para zoom"
+     */
+    const logoHint = container.querySelector('.logo-hint');
+    if (logoHint) {
+        logoHint.style.display = 'none';
     }
 
     // ========================================
@@ -225,7 +238,7 @@ function initLogo() {
      * - offsetX: Desplazamiento horizontal para centrado
      * - offsetY: Desplazamiento vertical
      */
-    const scale = 0.16;        // NOTA: Ajustar a 0.16 para tamaño perfecto
+    const scale = 0.19;        // NOTA: Ajustar a 0.16 para tamaño perfecto
     const offsetX = -4.8;
     const offsetY = 0;
     
@@ -515,9 +528,10 @@ function initLogo() {
         
         /**
          * Rotación automática cuando el usuario no está interactuando
+         * Velocidad aumentada para rotación más rápida
          */
         if (!isDragging) {
-            targetRotation.y += 0.0018; // Rotación lenta y constante
+            targetRotation.y += 0.005; // Rotación más rápida (antes: 0.0018)
         }
         
         /**
@@ -600,4 +614,3 @@ function initLogo() {
  *    - Velocidad de rotación: Cambiar el valor 0.0018 en la animación
  *    - Suavidad: Modificar el factor 0.075 en la interpolación
  */
-
