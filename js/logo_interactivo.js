@@ -495,12 +495,6 @@ function initLogo() {
     // ========================================
     
     /**
-     * NOTA: Si deseas DESACTIVAR la interactividad del usuario (rotación manual y zoom),
-     * comenta las siguientes líneas. El logo solo rotará automáticamente.
-     * Para reactivar la interactividad, descomenta estas líneas.
-     */
-    
-    /**
      * Eventos del mouse
      */
     canvas.addEventListener('mousedown', onPointerDown);
@@ -516,7 +510,7 @@ function initLogo() {
     canvas.addEventListener('touchend', onPointerUp);
     
     /**
-     * Evento de la rueda del mouse (zoom)
+     * Evento de la rueda del mouse
      */
     canvas.addEventListener('wheel', onWheel, { passive: false });
 
