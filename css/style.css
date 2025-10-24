@@ -1,0 +1,353 @@
+/* ==============================================
+   COLUMNAS LATERALES - TEXTURA DE ROCAS, SOMBRA
+   =============================================== */
+.side-column {
+    /* Imagen de fondo con textura de roca desde CDN */
+    background-image: url('https://cdn.jsdelivr.net/gh/TorKaHD/assets-cdn/images/PBR-2D-Roca-v2.png');
+    background-size: cover; /* La imagen cubre todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    
+    /* Sombra exterior suave para profundidad */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    
+    /* Transiciones suaves para efectos hover */
+    transition: transform 0.3s ease, background-position 0.3s ease;
+    
+    /* Posicionamiento para control de z-index */
+    position: relative;
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+}
+
+/* ==========================================================
+   IMÁGENES DE PRUEBA - ZOOM IN/OUT
+   ========================================================== */
+.image-test {
+    /* Configuración de objeto para imágenes responsivas */
+    object-fit: cover; /* Mantiene aspecto sin deformar */
+    object-position: center; /* Centra el contenido de la imagen */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    display: block; /* Elimina espacios extra debajo de la imagen */
+    
+    /* Sombra proyectada para efecto de profundidad */
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.7));
+    
+    /* Transición suave para efectos interactivos */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efecto hover: agranda la imagen y aumenta la sombra */
+.image-test:hover {
+    transform: scale(1.05); /* Zoom de 105% */
+    filter: drop-shadow(8px 8px 15px rgba(0,0,0,0.7)); /* Sombra más pronunciada */
+}
+
+.boton-1:hover {
+    transform: scale(1.05); /* Zoom de 105% */
+}
+
+
+/* ==========================================================
+   CONTENEDOR PRINCIPAL - FONDO DE LA PÁGINA
+   ========================================================== */
+.color-background {
+    /* Gradiente diagonal de gris claro a gris oscuro */
+    background: linear-gradient(135deg, #b0b0b0 0%, #1f1f1f 100%);
+    min-height: 100vh; /* Altura mínima de toda la ventana */
+    margin: 0;
+    
+    /* Fuente personalizada cargada desde CDN */
+    font-family: 'Anek Latin', sans-serif;
+}
+
+/* ==========================================================
+   FUENTES PERSONALIZADAS
+   ========================================================== */
+@font-face {
+    font-family: 'PlaywriteDesas';
+    /* Fuente WOFF2 (formato web optimizado) desde CDN */
+    src: url('https://cdn.jsdelivr.net/gh/TorKaHD/assets-cdn/fonts/PlaywriteDESAS-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ==========================================================
+   TÍTULOS
+   ========================================================== */
+.title-1 {
+    /* Aplica la fuente personalizada PlaywriteDesas */
+    font-family: 'PlaywriteDesas', sans-serif;
+    
+    /* Tamaño responsivo: mínimo 1.25rem, máximo 2rem, según viewport */
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
+    
+    color: #1f1f1f; /* Gris muy oscuro */
+    
+    /* Sombra de texto sutil para mejorar legibilidad */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+    
+    text-align: center;
+    
+    /* Padding superior responsivo */
+    padding-top: clamp(5px, 1vw, 15px);
+    
+    /* Margen inferior responsivo */
+    margin-bottom: clamp(15px, 3vw, 25px);
+}
+
+/* ==========================================================
+   LOGOS E IMÁGENES
+   ========================================================== */
+.image-test {
+    object-fit: cover;
+    object-position: center;
+    
+    /* Padding superior responsivo */
+    padding-top: clamp(5px, 2vw, 15px);
+    
+    display: block;
+    
+    /* Margen inferior responsivo */
+    margin-bottom: clamp(15px, 3vw, 25px);
+    
+    /* Sombra proyectada */
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.7));
+    
+    /* Transiciones suaves para interactividad */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efecto hover en imágenes */
+.image-test:hover {
+    transform: scale(1.05); /* Agranda 5% */
+    filter: drop-shadow(8px 8px 15px rgba(0, 0, 0, 0.7)); /* Sombra más intensa */
+}
+
+/* ==========================================================
+   RELOJ - CONTENEDOR PRINCIPAL
+   ========================================================== */
+.reloj-container {
+    /* Fondo glassmorphism: semi-transparente con blur */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo */
+    
+    /* Bordes redondeados responsivos */
+    border-radius: clamp(15px, 3vw, 25px);
+    
+    /* Padding interno responsivo */
+    padding: clamp(20px, 5vw, 50px);
+    
+    /* Sombra para efecto de elevación */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    
+    /* Borde sutil semi-transparente */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    text-align: center;
+    
+    /* Margen responsivo */
+    margin: clamp(15px, 3vw, 25px) auto;
+    
+    /* Ancho máximo: el menor entre 90vw y 500px */
+    max-width: min(90vw, 500px);
+    
+    /* Transiciones para efectos hover */
+    transition: box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* Efecto hover en el contenedor del reloj */
+.reloj-container:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    backdrop-filter: blur(15px); /* Aumenta el desenfoque */
+}
+
+/* ==========================================================
+   RELOJ PRINCIPAL Y FECHA
+   ========================================================== */
+.reloj {
+    /* Tamaño de fuente responsivo: mín 2rem, máx 4.5rem */
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    font-weight: bold;
+    color: #ffffff; /* Blanco puro */
+    
+    /* Sombra de texto para mejorar legibilidad */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+    /* Espaciado entre caracteres responsivo */
+    letter-spacing: clamp(1px, 0.3vw, 3px);
+    
+    /* Margen inferior responsivo */
+    margin-bottom: clamp(15px, 3vw, 25px);
+    
+    line-height: 1.1; /* Altura de línea compacta */
+}
+
+.fecha {
+    /* Tamaño de fuente responsivo */
+    font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+    color: #f0f0f0; /* Gris muy claro */
+    
+    /* Margen inferior responsivo */
+    margin-bottom: clamp(8px, 2vw, 15px);
+    
+    /* Sombra sutil de texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================
+   SEGUNDERO Y ETIQUETAS
+   ========================================================== */
+.segundero {
+    /* Tamaño responsivo para los segundos */
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    color: #ff6b6b; /* Rojo coral para destacar */
+    font-weight: bold;
+    
+    /* Sombra de texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    
+    /* Animación de pulso infinita (1 segundo por ciclo) */
+    animation: pulse 1s infinite;
+}
+
+.etiquetas {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos uniformemente */
+    
+    /* Tamaño de fuente responsivo */
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    color: #d0d0d0; /* Gris claro */
+    
+    /* Margen superior responsivo */
+    margin-top: clamp(8px, 2vw, 15px);
+    
+    /* Ancho máximo: el menor entre 80vw y 300px */
+    max-width: min(80vw, 300px);
+    
+    /* Centrado horizontal */
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Padding horizontal responsivo */
+    padding: 0 clamp(5px, 2vw, 10px);
+}
+
+/* ==========================================================
+   ANIMACIONES
+   ========================================================== */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6; /* Reduce opacidad a la mitad */
+        transform: scale(0.98); /* Reduce ligeramente el tamaño */
+    }
+    100% {
+        opacity: 1; /* Vuelve a opacidad completa */
+        transform: scale(1); /* Vuelve al tamaño original */
+    }
+}
+
+/* ==========================================================
+   MEDIA QUERIES - DISEÑO RESPONSIVO
+   ========================================================== */
+
+/* Móviles pequeños (hasta 375px) */
+@media (max-width: 375px) {
+    .color-background {
+        padding: 15px 5px; /* Padding reducido en pantallas muy pequeñas */
+    }
+    .reloj-container {
+        margin: 10px 5px;
+        padding: 15px;
+    }
+    .reloj {
+        letter-spacing: 1px; /* Espaciado mínimo */
+    }
+    .etiquetas {
+        font-size: 0.8rem;
+        padding: 0 5px;
+    }
+}
+
+/* Móviles medianos (376px - 480px) */
+@media (min-width: 376px) and (max-width: 480px) {
+    .reloj-container {
+        padding: 25px; /* Padding aumentado para pantallas medianas */
+    }
+}
+
+/* Móviles grandes / Tablets pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .reloj-container {
+        padding: 35px;
+        max-width: 450px; /* Ancho máximo aumentado */
+    }
+    .reloj {
+        font-size: 3.2rem; /* Tamaño de fuente fijo para tablets pequeñas */
+    }
+}
+
+/* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .reloj-container {
+        padding: 45px;
+        max-width: 480px;
+    }
+    .title-1 {
+        font-size: 3.5rem; /* Título más grande en tablets */
+    }
+}
+
+/* Pantallas grandes (1025px+) */
+@media (min-width: 1025px) {
+    .reloj-container {
+        padding: 50px; /* Padding máximo en pantallas grandes */
+        max-width: 500px;
+    }
+    .title-1 {
+        font-size: 4rem; /* Título máximo en desktop */
+    }
+    .reloj {
+        font-size: 4.5rem; /* Reloj máximo en desktop */
+    }
+}
+
+/* ==========================================================
+   ACCESIBILIDAD
+   ========================================================== */
+
+/* Respeta la preferencia del usuario de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .segundero {
+        animation: none; /* Elimina la animación de pulso */
+    }
+    .bootstrap-logo,
+    .image-test,
+    .reloj-container {
+        transition: none; /* Elimina todas las transiciones */
+    }
+}
+
+/* ==========================================================
+   MODO LANDSCAPE EN MÓVILES
+   ========================================================== */
+
+/* Optimización para cuando el móvil está en horizontal */
+@media (max-height: 500px) and (orientation: landscape) {
+    .color-background {
+        padding: 10px 0; /* Padding reducido en landscape */
+    }
+    .title-1 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem); /* Tamaño ajustado */
+        margin-bottom: 15px;
+    }
+    .reloj-container {
+        padding: 20px; /* Padding reducido */
+        margin: 10px auto;
+    }
+    .reloj {
+        font-size: clamp(1.8rem, 5vw, 3rem); /* Tamaño reducido para landscape */
+    }
+}
